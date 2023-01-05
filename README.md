@@ -6,19 +6,63 @@
 
 #
 
-### branch
+## branch
 
-### commit
+### web
 
-### PR
+| 종류    | 사용패턴        | 특징                                           |
+| :------ | :-------------- | :--------------------------------------------- |
+| main    | main            | 상용 (프로덕션)                                |
+| develop | develop         | 상용 배포 이전에 확인 가능한 브랜치 (스테이징) |
+| feat    | feat/작업명     | [기능] dev에 병합                              |
+| layout  | layout/페이지명 | [ 레이아웃] dev에 병합                         |
+| fix     | fix/name        | [수정] dev에 병합                              |
+| hotfix  | hotfix/name     | [hotfix] 메인에 병합                           |
 
-### lint
+### admin
 
-### code
+| 종류    | 사용패턴                                              | 특징                                    |
+| :------ | :---------------------------------------------------- | :-------------------------------------- |
+| main    | main                                                  | 상용                                    |
+| develop | develop                                               | 상용 배포 이전에 확인 가능한 dev 브랜치 |
+| feature | feature/이슈번호-컴포넌트명<br/>feature/issueNum-name | dev에 병합                              |
+| layout  | layout/이슈번호-컴포넌트명<br/>layout/issueNum-name   | dev에 병합                              |
+| fix     | fix/이슈번호-컴포넌트명<br/>fix/issueNum-name         | dev에 병합                              |
+| hotfix  | hotfix/이슈번호<br/>hotfix/#911                       | 마스터에 병합                           |
+
+## commit
+
+## PR 형식
+
+- PR 제목
+
+```
+
+```
+
+```
+## PR 타입(하나 이상의 PR 타입을 선택해주세요)
+-[] 기능 추가
+-[] 목업 페이지 구현
+-[] CSS 수정
+-[] 기능 삭제
+-[] 버그 수정
+-[] 의존성, 환경 변수, 빌드 관련 코드 업데이트
+
+## 반영 브랜치
+ex) feature/login -> dev
+
+## 변경 사항
+ex) 로그인 시, 구글 소셜 로그인 기능을 추가했습니다.
+```
+
+## lint
+
+## code
 
 - 함수명과 구현체가 동일한 맥락으로 작성되어 있어야 한다.
 
-#### function naming
+### function naming
 
 1. 컴포넌트 조작 함수 : handle + component + event 형태로 표현한다
 
@@ -82,7 +126,7 @@ users.map((el) => el.name);
 users.map((user) => user.name);
 ```
 
-### prettierrc
+## prettierrc
 
 ```ts
 {
@@ -100,7 +144,7 @@ users.map((user) => user.name);
 }
 ```
 
-### api interface
+## api interface
 
 - endpoint 폴더
   - types.ts tpye정의
