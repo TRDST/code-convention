@@ -25,10 +25,9 @@
 | :------ | :---------------------------------------------------- | :-------------------------------------- |
 | main    | main                                                  | 상용                                    |
 | develop | develop                                               | 상용 배포 이전에 확인 가능한 dev 브랜치 |
-| feature | feature/이슈번호-컴포넌트명<br/>feature/issueNum-name | dev에 병합                              |
-| layout  | layout/이슈번호-컴포넌트명<br/>layout/issueNum-name   | dev에 병합                              |
-| fix     | fix/이슈번호-컴포넌트명<br/>fix/issueNum-name         | dev에 병합                              |
-| hotfix  | hotfix/이슈번호<br/>hotfix/#911                       | 마스터에 병합                           |
+| feature | feat/작업명                                             | develop에 병합                              |
+| fix     | fix/작업명                                              | develop에 병합                              |
+| hotfix  | hotfix/작업명                                           | main 병합                           |
 
 ## commit
 
@@ -42,18 +41,21 @@
 
 ```
 ## PR 타입(하나 이상의 PR 타입을 선택해주세요)
--[] 기능 추가
--[] 목업 페이지 구현
--[] CSS 수정
--[] 기능 삭제
--[] 버그 수정
--[] 의존성, 환경 변수, 빌드 관련 코드 업데이트
+-[ ] 기능 추가
+-[ ] 목업 페이지 구현
+-[ ] CSS 수정
+-[ ] 기능 삭제
+-[ ] 버그 수정
+-[ ] 의존성, 환경 변수, 빌드 관련 코드 업데이트
 
 ## 반영 브랜치
 ex) feature/login -> dev
 
 ## 변경 사항
 ex) 로그인 시, 구글 소셜 로그인 기능을 추가했습니다.
+
+## 기타
+
 ```
 
 ## lint
@@ -66,8 +68,6 @@ ex) 로그인 시, 구글 소셜 로그인 기능을 추가했습니다.
 
 1. 컴포넌트 조작 함수 : handle + component + event 형태로 표현한다
 
-ex)
-
 ```js
 // bad
 const onChange = () => {};
@@ -78,10 +78,7 @@ const handleInputChange = () => {};
 const handleSaveButtonClick = () => {};
 ```
 
-2. 복수에 대한 네이밍 컨벤션
-   list를 불러올 때에는 불러올 대상+s를 붙인 복수형으로 표현
-
-ex)
+2. 복수에 대한 네이밍 : list를 불러올 때에는 불러올 대상+s를 붙인 복수형으로 표현
 
 ```ts
 // good
@@ -92,10 +89,7 @@ useOrders(); // 주문 전체 조회 (배열 형태 응답)
 useOrderList();
 ```
 
-3. 약어 사용 자제
-
-약어는 되도록 사용하지 않는다.
-부득이하게 약어가 필요하다고 판단되는 경우 팀원과의 상의 후 작성.
+3. 약어 사용 자제, 부득이하게 약어가 필요하다고 판단되는 경우 팀원과의 상의 후 작성.
 
 ```ts
 // bad
